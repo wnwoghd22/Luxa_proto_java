@@ -19,6 +19,7 @@ public class Luxa {
 			b.Rotate(ring, dir);
 
 		}
+		System.out.println("Clear!");
 	}
 
 	
