@@ -3,6 +3,7 @@ import java.util.*;
 public class Board {
 	private Whole[][] board;
 	private List<Ring> rings;
+	private Renderer renderer;
 
 	public Board(int col, int row) {
 		board = new Whole[col][row];
@@ -10,6 +11,7 @@ public class Board {
 			for(int j = 0; j < row; ++j)
 				board[i][j] = new Whole();
 		rings = new ArrayList<Ring>();
+		renderer = new Renderer();
 	}
 
 	public void SetBeads(int x, int y, int r, int g, int b) {
@@ -26,5 +28,8 @@ public class Board {
 		for (Ring r : rings) if (!r.GetComplete(board)) return false;
 
 		return result;
+	}
+	public void Render() {
+		renderer.Render(board);
 	}
 }

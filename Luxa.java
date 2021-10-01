@@ -6,9 +6,9 @@ public class Luxa {
 
 		Board b = fm.readFile(1);
 
-		while(!b.getComplete()) {
-			
-		}
+		//while(!b.getComplete()) {
+			b.Render();
+		//}
 	}
 
 	
