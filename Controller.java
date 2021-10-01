@@ -1,7 +1,12 @@
-
+import java.util.Scanner;
 
 public class Controller {
-	public Controller() {}
+	Scanner sc;
+	public Controller() { sc = new Scanner(System.in); }
+
+	String GetInput() {
+		return sc.nextLine();
+	}
 
 	
 }

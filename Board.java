@@ -15,12 +15,16 @@ public class Board {
 	}
 
 	public void SetBeads(int x, int y, int r, int g, int b) {
-		System.out.println("call init");
+		//System.out.println("call init");
 		board[x][y].init(r, g, b);
 	}
 
 	public void AddRing(int x, int y, int color) {
 		rings.add(new Ring(x, y, color));
+	}
+
+	public void Rotate(int ring, int dir) {
+		rings.get(ring).rotate(board, dir == 0 ? true : false);
 	}
 
 	public boolean getComplete() {

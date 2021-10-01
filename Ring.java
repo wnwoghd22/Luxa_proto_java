@@ -35,6 +35,7 @@ public class Ring {
 		
 	}
 	private void rotate_clock(Whole[][] board) {
+		//System.out.println("clockwise");
 		if (x % 2 == 0) { // is even
 			Bead temp = board[x- 1][y].GetBead();
 			board[x- 1][y].SetBead(board[x][y - 1].GetBead());
@@ -54,6 +55,7 @@ public class Ring {
 		}
 	}
 	private void rotate_counter(Whole[][] board) {
+		//System.out.println("counterclockwise");
 		if (x % 2 == 0) { // is even
 			Bead temp = board[x- 1][y].GetBead();
 			board[x- 1][y].SetBead(board[x - 1][y + 1].GetBead());
