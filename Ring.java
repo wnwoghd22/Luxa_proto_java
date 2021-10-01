@@ -35,7 +35,7 @@ public class Ring {
 		
 	}
 	private void rotate_clock(Whole[][] board) {
-		if (x % 2 == 1) { // is odd
+		if (x % 2 == 0) { // is even
 			Bead temp = board[x- 1][y].GetBead();
 			board[x- 1][y].SetBead(board[x][y - 1].GetBead());
 			board[x][y - 1].SetBead(board[x + 1][y].GetBead());
@@ -43,7 +43,7 @@ public class Ring {
 			board[x + 1][y + 1].SetBead(board[x][y + 1].GetBead());
 			board[x][y + 1].SetBead(board[x - 1][y + 1].GetBead());
 			board[x - 1][y + 1].SetBead(temp);
-		} else {
+		} else { // is odd
 			Bead temp = board[x- 1][y - 1].GetBead();
 			board[x- 1][y - 1].SetBead(board[x][y - 1].GetBead());
 			board[x][y - 1].SetBead(board[x + 1][y - 1].GetBead());
@@ -54,7 +54,7 @@ public class Ring {
 		}
 	}
 	private void rotate_counter(Whole[][] board) {
-		if (x % 2 == 1) { // is odd
+		if (x % 2 == 0) { // is even
 			Bead temp = board[x- 1][y].GetBead();
 			board[x- 1][y].SetBead(board[x - 1][y + 1].GetBead());
 			board[x - 1][y + 1].SetBead(board[x][y + 1].GetBead());
@@ -62,7 +62,7 @@ public class Ring {
 			board[x + 1][y + 1].SetBead(board[x + 1][y].GetBead());
 			board[x + 1][y].SetBead(board[x][y - 1].GetBead());
 			board[x][y - 1].SetBead(temp);
-		} else {
+		} else { // is odd
 			Bead temp = board[x- 1][y - 1].GetBead();
 			board[x - 1][y - 1].SetBead(board[x - 1][y].GetBead());
 			board[x - 1][y].SetBead(board[x][y + 1].GetBead());
@@ -93,7 +93,7 @@ public class Ring {
 	public boolean GetComplete(Whole[][] board) {
 		boolean result = false;
 
-		if (x % 2 == 1) { // is odd
+		if (x % 2 == 0) { // is even
 			result = (
 				isMatch(board[x- 1][y].GetBead()) &&
 				isMatch(board[x - 1][y + 1].GetBead()) &&
