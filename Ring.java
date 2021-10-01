@@ -114,6 +114,7 @@ public class Ring {
 				isMatch(board[x][y - 1].GetBead())
 			);
 		}
+		//System.out.println(color + " " + result);
 
 		return result;
 	}

@@ -5,7 +5,8 @@ public class Luxa {
 		FileManager fm = new FileManager();
 		Controller ct = new Controller();
 
-		Board b = fm.readFile(1);
+		Scanner selector = new Scanner(System.in);
+		Board b = fm.readFile(selector.nextInt());
 
 		while(!b.getComplete()) {
 			b.Render();
